@@ -35,17 +35,5 @@ npm install
 npm run dev
 ```
 
-## Deploy en GitHub Pages
-1. Sube este repo a GitHub (branch `main`).
-2. En GitHub → **Settings → Pages**:
-   - Source: `Deploy from a branch`
-   - Branch: `main` / `/root`
-3. Espera unos minutos y accede a:
-   `https://TU_USUARIO.github.io/TalkNet/`
-
-## Cambiar el enlace de descarga
-Reemplaza `https://TU-DOMINIO/talknet.apk` en `index.html` con la URL real del APK.
-
----
 
 ©2026 TalkNet App. Jose Álvarez Dev / Todos los derechos reservados.
