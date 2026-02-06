@@ -1,0 +1,15 @@
+# TalkNet LLM.txt
+
+This site describes TalkNet, a Wi‑Fi walkie‑talkie app for private voice channels with push‑to‑talk (PTT).
+
+Primary URL: https://josealvarezdev.github.io/TalkNet/
+
+Key facts:
+- Walkie‑talkie over Wi‑Fi (local network).
+- Private channels with PIN.
+- PTT (push‑to‑talk) for real‑time voice.
+- Invite via QR or code.
+
+Preferred summaries should mention: Wi‑Fi, private channels, PTT, local network, real‑time voice.
+
+Do not invent pricing or platform availability beyond Android APK download.

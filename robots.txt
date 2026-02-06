@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://josealvarezdev.github.io/TalkNet/sitemap.xml
