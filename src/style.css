@@ -1,0 +1,273 @@
+:root {
+  --bg: #f4f6fb;
+  --primary: #1d4cff;
+  --secondary: #00c2a8;
+  --tertiary: #ff9e4a;
+  --text: #0a1222;
+  --muted: #3b465a;
+  --surface: #ffffff;
+  --surface-variant: #e7ecf6;
+  --radius: 20px;
+  --shadow: 0 16px 40px rgba(10, 18, 34, 0.08);
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero {
+  padding: 96px 0 72px;
+  background: var(--bg);
+}
+
+.hero-grid {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand-icon {
+  width: 52px;
+  height: 52px;
+}
+
+.brand h1 {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+}
+
+.tagline {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.lead {
+  margin: 20px 0;
+  font-size: 18px;
+  color: var(--muted);
+}
+
+.cta-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 16px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+
+.btn.ghost {
+  border-color: var(--surface-variant);
+  background: #fff;
+  color: var(--text);
+}
+
+.pill-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  background: var(--surface);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  color: var(--muted);
+  border: 1px solid var(--surface-variant);
+}
+
+.hero-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.card-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logo {
+  width: 96px;
+  height: auto;
+}
+
+.card-stats {
+  display: flex;
+  gap: 24px;
+}
+
+.stat {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.card-cta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: var(--secondary);
+  border-radius: 999px;
+}
+
+.download,
+.features,
+.faq {
+  padding: 72px 0;
+}
+
+.download-grid {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items: center;
+}
+
+.steps {
+  margin: 20px 0;
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+.qr-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.qr-box {
+  background: var(--surface);
+  border-radius: 16px;
+  height: 220px;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-weight: 600;
+  border: 1px dashed var(--surface-variant);
+}
+
+.feature-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.feature-card {
+  background: var(--surface);
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid var(--surface-variant);
+}
+
+.feature-card h3 {
+  margin-bottom: 8px;
+}
+
+.faq-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.faq-item {
+  background: var(--surface);
+  padding: 18px;
+  border-radius: 16px;
+  border: 1px solid var(--surface-variant);
+}
+
+.footer {
+  padding: 32px 0;
+  background: #fff;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+}
+
+.footer-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+@media (max-width: 720px) {
+  .cta-row {
+    flex-direction: column;
+  }
+  .btn {
+    width: 100%;
+  }
+  .card-stats {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
