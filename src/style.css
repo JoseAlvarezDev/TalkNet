@@ -10,6 +10,21 @@
   --radius: 20px;
   --shadow: 0 16px 40px rgba(10, 18, 34, 0.08);
   --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0a0f1c;
+    --primary: #86a8ff;
+    --secondary: #5ae6d2;
+    --tertiary: #ffb46b;
+    --text: #e6ecf7;
+    --muted: #b5c2dd;
+    --surface: #111827;
+    --surface-variant: #1b2437;
+    --shadow: 0 16px 40px rgba(5, 8, 15, 0.35);
+  }
 }
 
 * {
@@ -34,6 +49,48 @@ a {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px;
+}
+
+.splash {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+  transition: opacity 0.3s ease;
+}
+
+.splash.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.splash-card {
+  display: grid;
+  place-items: center;
+  gap: 12px;
+  text-align: center;
+  padding: 24px;
+}
+
+.splash-icon {
+  width: 140px;
+  height: 140px;
+  background: var(--surface);
+  padding: 22px;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+}
+
+.splash footer {
+  position: fixed;
+  bottom: 18px;
+  left: 24px;
+  right: 24px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
 }
 
 .hero {
@@ -99,7 +156,7 @@ a {
 
 .btn.ghost {
   border-color: var(--surface-variant);
-  background: #fff;
+  background: var(--surface);
   color: var(--text);
 }
 
@@ -236,7 +293,7 @@ a {
 
 .footer {
   padding: 32px 0;
-  background: #fff;
+  background: var(--surface);
 }
 
 .footer-inner {

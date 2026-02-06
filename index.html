@@ -14,6 +14,15 @@
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
+    <div id="splash" class="splash" aria-hidden="true">
+      <div class="splash-card">
+        <img src="./icon.png" alt="TalkNet" class="splash-icon" />
+        <h1>TalkNet</h1>
+        <p>Canales de voz instantáneos</p>
+      </div>
+      <footer>©2026 TalkNet App. Jose Álvarez Dev / Todos los derechos reservados.</footer>
+    </div>
+
     <main>
       <section class="hero">
         <div class="container hero-grid">
@@ -44,7 +53,10 @@
 
           <div class="hero-card">
             <div class="card-inner">
-              <img src="./logo.png" alt="Logo TalkNet" class="logo" />
+              <picture>
+                <source srcset="./logo_light.png" media="(prefers-color-scheme: dark)" />
+                <img src="./logo.png" alt="Logo TalkNet" class="logo" />
+              </picture>
               <div class="card-stats">
                 <div>
                   <p class="stat">10 usuarios</p>
@@ -133,5 +145,14 @@
         <p>©2026 TalkNet App. Jose Álvarez Dev / Todos los derechos reservados.</p>
       </div>
     </footer>
+
+    <script>
+      window.addEventListener('load', () => {
+        const splash = document.getElementById('splash');
+        if (!splash) return;
+        splash.classList.add('hide');
+        setTimeout(() => splash.remove(), 400);
+      });
+    </script>
   </body>
 </html>
