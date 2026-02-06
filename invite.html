@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TalkNet — Invitación al Canal</title>
+    <meta name="description" content="Únete a un canal de TalkNet y habla por Wi‑Fi local." />
+    <link rel="canonical" href="https://josealvarezdev.github.io/TalkNet/invite" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Invitación a TalkNet" />
+    <meta property="og:description" content="Únete al canal con un toque." />
+    <meta property="og:url" content="https://josealvarezdev.github.io/TalkNet/invite" />
+    <meta property="og:image" content="https://josealvarezdev.github.io/TalkNet/logo.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Invitación a TalkNet" />
+    <meta name="twitter:description" content="Únete al canal con un toque." />
+    <meta name="twitter:image" content="https://josealvarezdev.github.io/TalkNet/logo.png" />
+
+    <link rel="icon" type="image/png" href="/TalkNet/icon.png" />
+    <link rel="stylesheet" href="/TalkNet/src/style.css" />
+  </head>
+  <body>
+    <div id="splash" class="splash" aria-hidden="true">
+      <div class="splash-card">
+        <img src="/TalkNet/icon.png" alt="TalkNet" class="splash-icon" />
+        <h1>TalkNet</h1>
+        <p>Invitación al canal</p>
+      </div>
+      <footer>©2026 TalkNet App. Jose Álvarez Dev / Todos los derechos reservados.</footer>
+    </div>
+
+    <main>
+      <section id="invite" class="invite">
+        <div class="container invite-card">
+          <div class="invite-left">
+            <h2>Te invitaron a un canal</h2>
+            <p class="muted" id="invite-name">Canal</p>
+            <div class="invite-meta">
+              <span id="invite-pin" class="pill">PIN: ----</span>
+              <span id="invite-host" class="pill">Host: --</span>
+            </div>
+            <div class="cta-row">
+              <a id="open-app" class="btn primary" href="#">Abrir en TalkNet</a>
+              <a class="btn ghost" href="https://github.com/JoseAlvarezDev/TalkNet/releases/download/v0.1.0/app-release.apk">Descargar app</a>
+            </div>
+            <button id="copy-pin" class="btn ghost">Copiar PIN</button>
+          </div>
+          <div class="invite-right">
+            <picture>
+              <source srcset="/TalkNet/logo.png" media="(prefers-color-scheme: dark)" />
+              <img src="/TalkNet/logo_light.png" alt="Logo TalkNet" class="logo" />
+            </picture>
+            <p class="muted">Si no tienes la app, descárgala e ingresa el enlace nuevamente.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <img src="/TalkNet/icon.png" alt="TalkNet" class="footer-icon" />
+        <p>©2026 TalkNet App. Jose Álvarez Dev / Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <script>
+      window.addEventListener('load', () => {
+        const splash = document.getElementById('splash');
+        if (splash) {
+          setTimeout(() => {
+            splash.classList.add('hide');
+            setTimeout(() => splash.remove(), 400);
+          }, 2500);
+        }
+
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name');
+        const pin = params.get('pin');
+        const host = params.get('host');
+        const port = params.get('port');
+        const id = params.get('id');
+
+        const safeName = name || 'Canal';
+        const safePin = pin || '----';
+        const safeHost = host && port ? `${host}:${port}` : '--';
+
+        document.getElementById('invite-name').textContent = `Canal: ${safeName}`;
+        document.getElementById('invite-pin').textContent = `PIN: ${safePin}`;
+        document.getElementById('invite-host').textContent = `Host: ${safeHost}`;
+
+        if (name && pin && host && port && id) {
+          const appLink = `talknet://join?name=${encodeURIComponent(name)}&pin=${encodeURIComponent(pin)}&host=${encodeURIComponent(host)}&port=${encodeURIComponent(port)}&id=${encodeURIComponent(id)}`;
+          document.getElementById('open-app').setAttribute('href', appLink);
+          document.getElementById('copy-pin').addEventListener('click', () => {
+            navigator.clipboard.writeText(pin).catch(() => {});
+          });
+        } else {
+          document.getElementById('open-app').classList.add('disabled');
+          document.getElementById('open-app').setAttribute('href', '/TalkNet/');
+        }
+      });
+    </script>
+  </body>
+</html>

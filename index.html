@@ -34,31 +34,6 @@
     </div>
 
     <main>
-      <section id="invite" class="invite hidden">
-        <div class="container invite-card">
-          <div class="invite-left">
-            <h2>Te invitaron a un canal</h2>
-            <p class="muted" id="invite-name">Canal</p>
-            <div class="invite-meta">
-              <span id="invite-pin" class="pill">PIN: ----</span>
-              <span id="invite-host" class="pill">Host: --</span>
-            </div>
-            <div class="cta-row">
-              <a id="open-app" class="btn primary" href="#">Abrir en TalkNet</a>
-              <a class="btn ghost" href="https://github.com/JoseAlvarezDev/TalkNet/releases/download/v0.1.0/app-release.apk">Descargar app</a>
-            </div>
-            <button id="copy-pin" class="btn ghost">Copiar PIN</button>
-          </div>
-          <div class="invite-right">
-            <picture>
-              <source srcset="/TalkNet/logo.png" media="(prefers-color-scheme: dark)" />
-              <img src="/TalkNet/logo_light.png" alt="Logo TalkNet" class="logo" />
-            </picture>
-            <p class="muted">Si no tienes la app, descárgala e ingresa el enlace nuevamente.</p>
-          </div>
-        </div>
-      </section>
-
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-copy">
@@ -189,28 +164,6 @@
             splash.classList.add('hide');
             setTimeout(() => splash.remove(), 400);
           }, 2500);
-        }
-
-        const params = new URLSearchParams(window.location.search);
-        const name = params.get('name');
-        const pin = params.get('pin');
-        const host = params.get('host');
-        const port = params.get('port');
-        const id = params.get('id');
-
-        if (name && pin && host && port && id) {
-          const invite = document.getElementById('invite');
-          invite.classList.remove('hidden');
-          document.getElementById('invite-name').textContent = `Canal: ${name}`;
-          document.getElementById('invite-pin').textContent = `PIN: ${pin}`;
-          document.getElementById('invite-host').textContent = `Host: ${host}:${port}`;
-
-          const appLink = `talknet://join?name=${encodeURIComponent(name)}&pin=${encodeURIComponent(pin)}&host=${encodeURIComponent(host)}&port=${encodeURIComponent(port)}&id=${encodeURIComponent(id)}`;
-          document.getElementById('open-app').setAttribute('href', appLink);
-
-          document.getElementById('copy-pin').addEventListener('click', () => {
-            navigator.clipboard.writeText(pin).catch(() => {});
-          });
         }
       });
     </script>
