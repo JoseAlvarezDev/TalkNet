@@ -40,7 +40,7 @@
             </p>
 
             <div class="cta-row">
-              <a class="btn primary" href="https://TU-DOMINIO/talknet.apk">Descargar APK</a>
+              <a class="btn primary" href="https://TU-DOMINIO/talknet.apk">Descargar app</a>
               <a class="btn ghost" href="#descarga">Ver instrucciones</a>
             </div>
 
@@ -81,15 +81,15 @@
           <div>
             <h2>Descarga rápida</h2>
             <p class="muted">
-              Comparte el QR con tu equipo o usa el enlace directo. Si no tienes la app, podrás descargar el APK.
+              Comparte el QR con tu equipo o usa el enlace directo. Si no tienes la app, podrás descargarla.
             </p>
             <ol class="steps">
-              <li>Descarga e instala el APK.</li>
+              <li>Descarga e instala la app.</li>
               <li>Crea un canal con PIN.</li>
               <li>Invita por QR o código.</li>
             </ol>
             <div class="cta-row">
-              <a class="btn primary" href="https://TU-DOMINIO/talknet.apk">Descargar APK</a>
+              <a class="btn primary" href="https://TU-DOMINIO/talknet.apk">Descargar app</a>
               <a class="btn ghost" href="#faq">Preguntas</a>
             </div>
           </div>
@@ -150,8 +150,10 @@
       window.addEventListener('load', () => {
         const splash = document.getElementById('splash');
         if (!splash) return;
-        splash.classList.add('hide');
-        setTimeout(() => splash.remove(), 400);
+        setTimeout(() => {
+          splash.classList.add('hide');
+          setTimeout(() => splash.remove(), 400);
+        }, 900);
       });
     </script>
   </body>
